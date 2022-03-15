@@ -11,12 +11,20 @@ import SnapKit
 
 class ViewController: UIViewController {
 
-    var signUp = SignUp()
+    var wannaKnowView = WannaKnowView()
+    
+    override func loadView() {
+        super.loadView()
+        view = wannaKnowView
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
+    
+    
+    
+    
 }
 
