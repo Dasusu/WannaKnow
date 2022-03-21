@@ -17,6 +17,7 @@ class InsideTitleAndTextField: UIView {
         titleLabel.font = .systemFont(ofSize: 18)
         titleLabel.tintColor = .white
         titleLabel.text = ""
+        titleLabel.textAlignment = .right
         return titleLabel
     }()
     
@@ -26,7 +27,10 @@ class InsideTitleAndTextField: UIView {
         textField.font = .systemFont(ofSize: 18)
         textField.textColor = .black
         textField.borderStyle = .roundedRect
-        textField.text = ""
+        textField.layer.cornerRadius = 10
+        textField.layer.masksToBounds = true
+        textField.layer.borderColor = #colorLiteral(red: 0.4011802375, green: 0.6375043988, blue: 0.4550539255, alpha: 1)
+        textField.layer.borderWidth = 2
         return textField
     }()
 
@@ -44,11 +48,12 @@ class InsideTitleAndTextField: UIView {
            let labelAndTextFieldStackView = UIStackView(arrangedSubviews: [titleLabel, textField])
             labelAndTextFieldStackView.axis = .horizontal
             labelAndTextFieldStackView.distribution = .fillEqually
+            labelAndTextFieldStackView.spacing = 10
             return labelAndTextFieldStackView
         }()
         addSubview(labelAndTextFieldStackView)
         labelAndTextFieldStackView.snp.makeConstraints { make in
-            make.center.equalTo(self)
+            make.edges.equalToSuperview()
         }
     }
     

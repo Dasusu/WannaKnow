@@ -18,7 +18,6 @@
 		4197249A27D5DE3900E60C2E /* InsideTItleAndDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4197249927D5DE3900E60C2E /* InsideTItleAndDatePicker.swift */; };
 		4197249C27D87ABE00E60C2E /* InsideTitleAndDropDownList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4197249B27D87ABE00E60C2E /* InsideTitleAndDropDownList.swift */; };
 		4197249E27D88A6200E60C2E /* ImageAndTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4197249D27D88A6200E60C2E /* ImageAndTextField.swift */; };
-		419724A227D8BDC200E60C2E /* Group 14.svg in Resources */ = {isa = PBXBuildFile; fileRef = 419724A127D8BDC200E60C2E /* Group 14.svg */; };
 		419724A427D8C2F500E60C2E /* InsideTitleAndSegmentedPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419724A327D8C2F500E60C2E /* InsideTitleAndSegmentedPicker.swift */; };
 		B31EB127238EC5CE707B7EFA /* Pods_WannaKnow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 058A9C8400AC07D347C82055 /* Pods_WannaKnow.framework */; };
 /* End PBXBuildFile section */
@@ -39,7 +38,6 @@
 		4197249927D5DE3900E60C2E /* InsideTItleAndDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsideTItleAndDatePicker.swift; sourceTree = "<group>"; };
 		4197249B27D87ABE00E60C2E /* InsideTitleAndDropDownList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsideTitleAndDropDownList.swift; sourceTree = "<group>"; };
 		4197249D27D88A6200E60C2E /* ImageAndTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAndTextField.swift; sourceTree = "<group>"; };
-		419724A127D8BDC200E60C2E /* Group 14.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "Group 14.svg"; path = "../../../Desktop/Group 14.svg"; sourceTree = "<group>"; };
 		419724A327D8C2F500E60C2E /* InsideTitleAndSegmentedPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsideTitleAndSegmentedPicker.swift; sourceTree = "<group>"; };
 		A5E2068F7EF00BC7DBF13E0F /* Pods-WannaKnow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WannaKnow.debug.xcconfig"; path = "Target Support Files/Pods-WannaKnow/Pods-WannaKnow.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -81,7 +79,6 @@
 				4197247A27BF7DC200E60C2E /* AppDelegate.swift */,
 				4197247C27BF7DC200E60C2E /* SceneDelegate.swift */,
 				4197247E27BF7DC200E60C2E /* ViewController.swift */,
-				419724A127D8BDC200E60C2E /* Group 14.svg */,
 				4197248327BF7DC300E60C2E /* Assets.xcassets */,
 				4197248527BF7DC300E60C2E /* LaunchScreen.storyboard */,
 				4197248827BF7DC300E60C2E /* Info.plist */,
@@ -186,7 +183,6 @@
 			files = (
 				4197248727BF7DC300E60C2E /* LaunchScreen.storyboard in Resources */,
 				4197248427BF7DC300E60C2E /* Assets.xcassets in Resources */,
-				419724A227D8BDC200E60C2E /* Group 14.svg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

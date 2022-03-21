@@ -15,11 +15,14 @@ class InsideTitleAndSegmentedPicker: UIView {
         titleLabel.font = .systemFont(ofSize: 18)
         titleLabel.tintColor = .white
         titleLabel.text = ""
+        titleLabel.textAlignment = .right
         return titleLabel
     }()
     
     let segmentedPicker: UISegmentedControl = {
         let segmentedPicker = UISegmentedControl(items: ["現場","遠端"])
+        segmentedPicker.selectedSegmentIndex = 0
+        segmentedPicker.selectedSegmentTintColor = #colorLiteral(red: 0.4011802375, green: 0.6375043988, blue: 0.4550539255, alpha: 1)
         
         return segmentedPicker
     }()
@@ -38,6 +41,7 @@ class InsideTitleAndSegmentedPicker: UIView {
             let labelAndSegmentedPickerStackView = UIStackView(arrangedSubviews: [titleLabel, segmentedPicker])
             labelAndSegmentedPickerStackView.axis = .horizontal
             labelAndSegmentedPickerStackView.distribution = .fillEqually
+            labelAndSegmentedPickerStackView.spacing = 10
             return labelAndSegmentedPickerStackView
         }()
         addSubview(labelAndSegmentedPickerStackView)

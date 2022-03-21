@@ -20,24 +20,24 @@ class WannaKnowView: UIView{
     }
     
     var firstTitle: InsideTitleAndTextField = {
-       let first = InsideTitleAndTextField()
-        first.titleLabel.text = "分享人:"
+        let first = InsideTitleAndTextField()
+        first.titleLabel.text = "分享人: "
         return first
     }()
     
     var secondTitle: InsideTItleAndDatePicker = {
         let second = InsideTItleAndDatePicker()
-        second.titleLabel.text = "日期:"
+        second.titleLabel.text = "日期: "
         return second
     }()
     var thirdTitle: InsideTitleAndDorpDownList = {
-       let third = InsideTitleAndDorpDownList()
+        let third = InsideTitleAndDorpDownList()
         third.titleLabel.text = "分類:"
         return third
     }()
     var fourTitle: InsideTitleAndTextField = {
-       let four = InsideTitleAndTextField()
-        four.titleLabel.text = "主題:"
+        let four = InsideTitleAndTextField()
+        four.titleLabel.text = "主題: "
         return four
     }()
     var fifthTitle: ImageAndTextField = {
@@ -46,21 +46,22 @@ class WannaKnowView: UIView{
     }()
     var sixTitle: InsideTitleAndSegmentedPicker = {
         let six = InsideTitleAndSegmentedPicker()
-        six.titleLabel.text = "分享方式:"
+        six.titleLabel.text = "分享方式: "
         return six
     }()
     var tagTitle: InsideTitleAndTextField = {
         let tag = InsideTitleAndTextField()
-        tag.titleLabel.text = "標籤:"
+        tag.titleLabel.text = "標籤: "
         return tag
     }()
     
- // MARK: 元件
+    // MARK: 元件
     var titleLabel: UILabel = {
         let titleLabel = UILabel()
         titleLabel.font = .systemFont(ofSize: 24)
         titleLabel.text = "報名"
         titleLabel.tintColor = .white
+        titleLabel.textAlignment = .center
         return titleLabel
     }()
     
@@ -71,7 +72,10 @@ class WannaKnowView: UIView{
         textView.isEditable = true
         textView.isSelectable = true
         textView.text = ""
-        textView.backgroundColor = .brown
+        textView.layer.borderWidth = 2
+        textView.layer.borderColor = #colorLiteral(red: 0.4011802375, green: 0.6375043988, blue: 0.4550539255, alpha: 1)
+        textView.layer.cornerRadius = 15
+        textView.layer.masksToBounds = true
         return textView
     }()
     
@@ -85,8 +89,9 @@ class WannaKnowView: UIView{
         let sendButton = UIButton()
         sendButton.setTitle("送出", for: .normal)
         sendButton.tintColor = .white
+        sendButton.layer.cornerRadius = 15
+        sendButton.layer.masksToBounds = true
         sendButton.backgroundColor = #colorLiteral(red: 0.4011802375, green: 0.6375043988, blue: 0.4550539255, alpha: 1)
-        
         return sendButton
     }()
     
@@ -100,65 +105,32 @@ class WannaKnowView: UIView{
     }
     
     func setView() {
-        addSubview(titleLabel)
-        addSubview(firstTitle)
-        addSubview(secondTitle)
-        addSubview(thirdTitle)
-        addSubview(fourTitle)
-        addSubview(fifthTitle)
-        addSubview(sixTitle)
-        addSubview(tagTitle)
-        addSubview(tagView)
-        addSubview(textView)
+        let topStackView = UIStackView(arrangedSubviews: [titleLabel, firstTitle, secondTitle, thirdTitle, fourTitle, fifthTitle, sixTitle, tagTitle, tagView])
+        topStackView.axis = .vertical
+        topStackView.spacing = 20
+        topStackView.distribution = .fill
+        addSubview(topStackView)
         addSubview(sendButton)
-        titleLabel.snp.makeConstraints { make in
-            make.centerX.equalTo(safeAreaLayoutGuide)
-            make.top.equalTo(safeAreaLayoutGuide.snp.top)
-
-        }
-        firstTitle.snp.makeConstraints { make in
-            make.top.equalTo(titleLabel.snp.bottom).offset(40)
-            make.centerX.equalTo(safeAreaLayoutGuide)
-        }
-        secondTitle.snp.makeConstraints { make in
-            make.top.equalTo(firstTitle.snp.bottom).offset(60)
-            make.centerX.equalTo(safeAreaLayoutGuide)
-        }
-        thirdTitle.snp.makeConstraints { make in
-            make.top.equalTo(secondTitle.snp.bottom).offset(60)
-            make.centerX.equalTo(safeAreaLayoutGuide)
-        }
-        fourTitle.snp.makeConstraints { make in
-            make.top.equalTo(thirdTitle.snp.bottom).offset(60)
-            make.centerX.equalTo(safeAreaLayoutGuide)
-        }
-        fifthTitle.snp.makeConstraints { make in
-            make.top.equalTo(fourTitle.snp.bottom).offset(60)
-            make.centerX.equalTo(safeAreaLayoutGuide)
-        }
-        sixTitle.snp.makeConstraints { make in
-            make.top.equalTo(fifthTitle.snp.bottom).offset(60)
-            make.centerX.equalTo(safeAreaLayoutGuide)
-        }
-        tagTitle.snp.makeConstraints { make in
-            make.top.equalTo(sixTitle.snp.bottom).offset(60)
-            make.centerX.equalTo(safeAreaLayoutGuide)
+        addSubview(textView)
+        topStackView.snp.makeConstraints { make in
+            make.top.equalTo(safeAreaLayoutGuide).offset(15)
+            make.leading.equalTo(40)
+            make.trailing.equalTo(-40)
         }
         tagView.snp.makeConstraints { make in
-            make.top.equalTo(tagTitle.snp.bottom).offset(30)
             make.height.equalTo(30)
-            make.width.equalTo(100)
-            make.centerX.equalTo(safeAreaLayoutGuide)
         }
         textView.snp.makeConstraints { make in
-            make.top.equalTo(tagView.snp.bottom).offset(30)
-            make.height.equalTo(100)
-            make.width.equalTo(300)
-            make.centerX.equalTo(safeAreaLayoutGuide)
+            make.top.equalTo(topStackView.snp.bottom).offset(15)
+            make.leading.equalTo(30)
+            make.trailing.equalTo(-30)
+            make.height.equalTo(300)
+            make.bottom.equalTo(sendButton.snp.top).offset(-15)
         }
         sendButton.snp.makeConstraints { make in
-            make.top.equalTo(textView.snp.bottom).offset(60)
-            make.centerX.equalTo(safeAreaLayoutGuide)
+            make.leading.equalTo(175)
+            make.trailing.equalTo(-175)
+            make.bottom.equalToSuperview().offset(-20)
         }
     }
     

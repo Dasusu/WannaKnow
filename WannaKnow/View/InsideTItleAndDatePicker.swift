@@ -14,6 +14,7 @@ class InsideTItleAndDatePicker: UIView {
        let datePicker = UIDatePicker()
         datePicker.datePickerMode = .date
         datePicker.preferredDatePickerStyle = .compact
+        
         return datePicker
     }()
     
@@ -22,6 +23,7 @@ class InsideTItleAndDatePicker: UIView {
         titleLabel.font = .systemFont(ofSize: 18)
         titleLabel.tintColor = .white
         titleLabel.text = ""
+        titleLabel.textAlignment = .right
         return titleLabel
     }()
     
@@ -39,11 +41,12 @@ class InsideTItleAndDatePicker: UIView {
             let titleAndDatePickerStackView = UIStackView(arrangedSubviews: [titleLabel,datePicker])
             titleAndDatePickerStackView.axis = .horizontal
             titleAndDatePickerStackView.distribution = .fillEqually
+            titleAndDatePickerStackView.spacing = 10
             return titleAndDatePickerStackView
         }()
         addSubview(titleAndDatePickerStackView)
         titleAndDatePickerStackView.snp.makeConstraints { make in
-            make.center.equalTo(self)
+            make.edges.equalToSuperview()
         }
     }
     

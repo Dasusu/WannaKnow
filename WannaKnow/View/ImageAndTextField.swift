@@ -7,13 +7,16 @@
 
 import Foundation
 import SnapKit
+import UIKit
 
 class ImageAndTextField: UIView {
-   
-    let imageTitle: UIImageView = {
-        let imageTitle = UIImageView()
-        imageTitle.image = UIImage(named: "Group 14")
-        return imageTitle
+    
+    let imageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "Group 14")
+        imageView.tintColor = .black
+        
+        return imageView
     }()
     
     let textField: UITextField = {
@@ -23,6 +26,10 @@ class ImageAndTextField: UIView {
         textField.textColor = .black
         textField.borderStyle = .roundedRect
         textField.text = ""
+        textField.layer.cornerRadius = 10
+        textField.layer.masksToBounds = true
+        textField.layer.borderColor = #colorLiteral(red: 0.4011802375, green: 0.6375043988, blue: 0.4550539255, alpha: 1)
+        textField.layer.borderWidth = 2
         return textField
     }()
     
@@ -36,15 +43,17 @@ class ImageAndTextField: UIView {
     }
     
     func setView() {
-        let imageAndTextFieldStackView: UIStackView = {
-            let imageAndTextFieldStackView = UIStackView(arrangedSubviews: [imageTitle, textField])
-            imageAndTextFieldStackView.axis = .horizontal
-            imageAndTextFieldStackView.distribution = .fillEqually
-            return imageAndTextFieldStackView
-        }()
+        let imageAndTextFieldStackView = UIStackView(arrangedSubviews: [imageView, textField])
+        imageAndTextFieldStackView.axis = .horizontal
+        imageAndTextFieldStackView.distribution = .fill
+        imageAndTextFieldStackView.spacing = 10
         addSubview(imageAndTextFieldStackView)
+        imageView.snp.makeConstraints { make in
+            make.height.width.equalTo(30)
+            make.leading.equalTo(132)
+        }
         imageAndTextFieldStackView.snp.makeConstraints { make in
-            make.center.equalTo(self)
+            make.edges.equalToSuperview()
         }
     }
 }

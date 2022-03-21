@@ -16,11 +16,14 @@ class ViewController: UIViewController {
     override func loadView() {
         super.loadView()
         view = wannaKnowView
+//        let v = UITextView()
+//        v.text = "123"
+//        view = v
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        print(#function)
     }
     
     
